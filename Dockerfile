@@ -20,6 +20,6 @@ RUN apt-get update \
     && wget https://github.com/raspberrypi/pico-sdk/archive/1.0.1.tar.gz --no-check-certificate\
     && tar -zxvf 1.0.1.tar.gz \
     && mv pico-sdk-1.0.1 pico-sdk \
-    && mnv pico-sdk /opt/pico-sdk
+    && mv pico-sdk /opt/pico-sdk
 
 ENTRYPOINT [ "/bin/bash" ]
