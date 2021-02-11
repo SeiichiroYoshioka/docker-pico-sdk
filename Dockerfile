@@ -17,7 +17,9 @@ RUN apt-get update \
     && tar -zxvf cmake-3.19.4-Linux-x86_64.tar.gz \
     && mv cmake-3.19.4-Linux-x86_64 cmake \
     && mv cmake /usr/local/bin/cmake \
-    && git clone -depth 1 https://github.com/raspberrypi/pico-sdk.git \
+    && wget https://github.com/raspberrypi/pico-sdk/archive/1.0.1.tar.gz \
+    && tar -zxvf pico-sdk-1.0.1.tar.gz \
+    && mv pico-sdk-1.0.1 pico-sdk \
     && mnv pico-sdk /opt/pico-sdk
 
 ENTRYPOINT [ "/bin/bash" ]
