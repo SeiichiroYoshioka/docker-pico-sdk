@@ -13,11 +13,11 @@ RUN apt-get update \
     && apt-get purge cmake -y \
     && apt-get -y clean \
     && rm -rf /var/lib/apt/lists/* \
-    && wget https://github.com/Kitware/CMake/releases/download/v3.19.4/cmake-3.19.4-Linux-x86_64.tar.gz \
+    && wget https://github.com/Kitware/CMake/releases/download/v3.19.4/cmake-3.19.4-Linux-x86_64.tar.gz --no-check-certificate\
     && tar -zxvf cmake-3.19.4-Linux-x86_64.tar.gz \
     && mv cmake-3.19.4-Linux-x86_64 cmake \
     && mv cmake /usr/local/bin/cmake \
-    && wget https://github.com/raspberrypi/pico-sdk/archive/1.0.1.tar.gz \
+    && wget https://github.com/raspberrypi/pico-sdk/archive/1.0.1.tar.gz --no-check-certificate\
     && tar -zxvf pico-sdk-1.0.1.tar.gz \
     && mv pico-sdk-1.0.1 pico-sdk \
     && mnv pico-sdk /opt/pico-sdk
