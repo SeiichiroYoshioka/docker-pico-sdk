@@ -24,7 +24,7 @@ RUN apt-get update \
     && git clone https://github.com/raspberrypi/pico-sdk.git\
     && cd pico-sdk\
     && git submodule update --init\
-    && cd pico-sdk/tools/elf2uf2 \
+    && cd /pico-sdk/tools/elf2uf2 \
     && mkdir build \
     && cd build \
     && cmake .. \
