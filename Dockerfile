@@ -9,7 +9,7 @@ ENV PICO_SDK_PATH=/opt/pico-sdk
 
 RUN apt-get update \
     && apt-get upgrade -y \
-    && apt-get install -y --no-install-recommends git gcc-arm-none-eabi libnewlib-arm-none-eabi wget\
+    && apt-get install -y --no-install-recommends git gcc-arm-none-eabi libnewlib-arm-none-eabi wget make\
     && apt-get purge cmake -y \
     && apt-get -y clean \
     && rm -rf /var/lib/apt/lists/* \
