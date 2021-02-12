@@ -20,6 +20,8 @@ RUN apt-get update \
     && wget https://github.com/raspberrypi/pico-sdk/archive/1.0.1.tar.gz --no-check-certificate\
     && tar -zxvf 1.0.1.tar.gz \
     && mv pico-sdk-1.0.1 pico-sdk \
-    && mv pico-sdk /opt/pico-sdk
+    && mv pico-sdk /opt/pico-sdk \
+    && rm cmake-3.19.4-Linux-x86_64.tar.gz \
+    && rm 1.0.1.tar.gz
 
 ENTRYPOINT [ "/bin/bash" ]
