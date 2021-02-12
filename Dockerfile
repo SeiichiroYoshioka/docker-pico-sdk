@@ -17,11 +17,18 @@ RUN apt-get update \
     && tar -zxvf cmake-3.19.4-Linux-x86_64.tar.gz \
     && mv cmake-3.19.4-Linux-x86_64 cmake \
     && mv cmake /usr/local/bin/cmake \
-    && wget https://github.com/raspberrypi/pico-sdk/archive/1.0.1.tar.gz --no-check-certificate\
-    && tar -zxvf 1.0.1.tar.gz \
-    && mv pico-sdk-1.0.1 pico-sdk \
-    && mv pico-sdk /opt/pico-sdk \
     && rm cmake-3.19.4-Linux-x86_64.tar.gz \
-    && rm 1.0.1.tar.gz
+    && git clone -b master -depth 1 https://github.com/raspberrypi/pico-sdk.git --no-check-certificate\
+    && cd pico-sdk\
+    && git submodule update --init\
+    && cd ../ \
+    && mv pico-sdk /opt/pico-sdk \
+    && git clone -b master -depth 1 https://github.com/raspberrypi/pico-examples.git --no-check-certificate\
+    && git clone -b master -depth 1 https://github.com/raspberrypi/picotool.git --no-check-certificate\
+    && cd picotool \
+    && mkdir build \
+    && cd build \
+    && cmake .. \
+    && make 
 
 ENTRYPOINT [ "/bin/bash" ]
