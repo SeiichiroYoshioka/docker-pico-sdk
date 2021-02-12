@@ -4,7 +4,7 @@ WORKDIR /
 
 ENV DEBIAN_FRONTEND=noninteractive
 ENV TZ=Asia/Tokyo 
-ENV PATH=/usr/local/cmake/bin:$PATH
+ENV PATH=/usr/local/bin/cmake/bin:$PATH
 ENV PICO_SDK_PATH=/opt/pico-sdk
 
 RUN apt-get update \
