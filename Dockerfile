@@ -29,7 +29,7 @@ RUN apt-get update \
     && cd picotool \
     && mkdir build \
     && cd build \
-    && cmake .. \
+    && cmake .. -D CMAKE_C_COMPILER="/usr/bin/arm-none-eabi-gcc" -D CMAKE_CXX_COMPILER="/usr/bin/arm-none-eabi-g++"\
     && make 
 
 ENTRYPOINT [ "/bin/bash" ]
