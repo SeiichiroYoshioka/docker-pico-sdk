@@ -9,7 +9,7 @@ ENV PICO_SDK_PATH=/opt/pico-sdk
 
 RUN apt-get update \
     && apt-get upgrade -y \
-    && apt-get install -y --no-install-recommends git gcc-arm-none-eabi libnewlib-arm-none-eabi wget make\
+    && apt-get install -y --no-install-recommends git gcc-arm-none-eabi libnewlib-arm-none-eabi build-essential wget make\
     && apt-get purge cmake -y \
     && apt-get -y clean \
     && rm -rf /var/lib/apt/lists/* \
@@ -29,7 +29,7 @@ RUN apt-get update \
     && cd picotool \
     && mkdir build \
     && cd build \
-    && cmake .. -D CMAKE_C_COMPILER="/usr/bin/arm-none-eabi-gcc" -D CMAKE_CXX_COMPILER="/usr/bin/arm-none-eabi-g++"\
+    && cmake .. -D CMAKE_C_COMPILER="/usr/bin/gcc" -D CMAKE_CXX_COMPILER="/usr/bin/g++"\
     && make 
 
 ENTRYPOINT [ "/bin/bash" ]
