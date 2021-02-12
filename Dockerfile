@@ -18,6 +18,7 @@ RUN apt-get update \
     && mv cmake-3.19.4-Linux-x86_64 cmake \
     && mv cmake /usr/local/bin/cmake \
     && rm cmake-3.19.4-Linux-x86_64.tar.gz \
+    && git config --global http.sslverify false \
     && git clone https://github.com/raspberrypi/pico-sdk.git\
     && cd pico-sdk\
     && git submodule update --init\
