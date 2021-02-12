@@ -18,13 +18,13 @@ RUN apt-get update \
     && mv cmake-3.19.4-Linux-x86_64 cmake \
     && mv cmake /usr/local/bin/cmake \
     && rm cmake-3.19.4-Linux-x86_64.tar.gz \
-    && git clone -b master -depth 1 https://github.com/raspberrypi/pico-sdk.git --no-check-certificate\
+    && git clone -b master --depth 1 https://github.com/raspberrypi/pico-sdk.git --no-check-certificate\
     && cd pico-sdk\
     && git submodule update --init\
     && cd ../ \
     && mv pico-sdk /opt/pico-sdk \
-    && git clone -b master -depth 1 https://github.com/raspberrypi/pico-examples.git --no-check-certificate\
-    && git clone -b master -depth 1 https://github.com/raspberrypi/picotool.git --no-check-certificate\
+    && git clone -b master --depth 1 https://github.com/raspberrypi/pico-examples.git --no-check-certificate\
+    && git clone -b master --depth 1 https://github.com/raspberrypi/picotool.git --no-check-certificate\
     && cd picotool \
     && mkdir build \
     && cd build \
