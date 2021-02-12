@@ -9,8 +9,8 @@ ENV PICO_SDK_PATH=/opt/pico-sdk
 
 RUN apt-get update \
     && apt-get upgrade -y \
-    && apt-get install -y --no-install-recommends git gcc-arm-none-eabi \
-        libnewlib-arm-none-eabi libstdc++-arm-none-eabi-newlib build-essential wget make libusb-1.0-0-dev \
+    && apt-get install -y git gcc-arm-none-eabi \
+        libnewlib-arm-none-eabi build-essential wget make libusb-1.0-0-dev \
         pkg-config libusb-1.0 python3 python3-dev python3-pip\
     && apt-get purge cmake -y \
     && apt-get -y clean \
