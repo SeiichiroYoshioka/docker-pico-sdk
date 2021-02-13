@@ -44,6 +44,7 @@ RUN apt-get update \
     && mkdir build \
     && cd build \
     && cmake ..\
-    && make 
+    && make \
+    && mv picotool /usr/local/bin/
 
 ENTRYPOINT [ "/bin/bash" ]
